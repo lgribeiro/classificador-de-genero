@@ -5,9 +5,9 @@ Este projeto consiste em :
 - Analisar dados de pacientes
 - Construir um modelo de predição de gênero {Masculino: M, Feminino:F}
 
-## Instalação do python3.X e atualizações de suas bibliotecas.
+## Instalação do python3.6.x e atualizações de suas bibliotecas.
 
-### 1. Instalando python3.x no Unix ou Windows
+### 1. Instalando python3.6.x no Unix ou Windows
 Uma boa prática de programação é criar um ambiente isolado de desenvolvimento para o Python3 e suas dependências (Virtual Environments - env). Abaixo alguns tutoriais de como criar um ambiente virtual.
 
 https://virtualenvwrapper.readthedocs.io/en/latest/
