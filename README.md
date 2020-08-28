@@ -11,6 +11,7 @@ Este projeto consiste em :
 Uma boa prática de programação é criar um ambiente isolado de desenvolvimento para o Python3 e suas dependências (Virtual Environments - env). Abaixo alguns tutoriais de como criar um ambiente virtual.
 
 https://virtualenvwrapper.readthedocs.io/en/latest/
+
 https://pythonacademy.com.br/blog/python-e-virtualenv-como-programar-em-ambientes-virtuais
 
 Como alternativa prática, o Framework Anaconda pode ser instalado. Por ser uma ferramente computacional gratuita e de fácil instalação que permite gerir distribuições de Python (e meu S.O é windows) eu preferi usa-la.
@@ -31,8 +32,18 @@ Se optou pelo Anaconda execute o comando abaixo no terminal da aplicação:
 ```
 conda update --all
 ```
+### 3. Executando o classificador de gênero
+O modelo classificará a partir de um lote de dados de pacientes, arquivo .csv, se o genêro é masculino: M ou feminino: F. O resultado e exportado na raiz da pasta do projeto como 'newsample_PREDICTIONS_Luiz_Ribeiroo.csv'.
+Para executar o classificador use o seguinte comando 
 
-## Descrição da base de dados 
+```
+python gender_predictor.py --input_file newsample.csv
+```
+### 4. Base de dados
+A base de dados, test_data_CANDIDATE.csv, que se encontra na raiz do projeto será usada para treinar o modelo de classificação de gênero. 
+Observação: A base de dados fornecida carece de fonte.
+
+#### Descrição da base de dados 
 
 - age: in years
 - sex: (M = male; F = female)
@@ -52,8 +63,45 @@ conda update --all
 - ca: number of major vessels (0-3) colored by flourosopy
 - thal: 3 = normal; 6 = fixed defect; 7 = reversable defect
 
+### 5. Modelos de classificação
+
+<img src="/images/scikit-learn.png" alt="Scikit-Learn"/>
 
 
+A Scikit-Learn é uma biblioteca  para trabalhar com machine learning em python. Essa poderosa ferramente construida em NumPy, SciPy e matplotlib é simple e eficiente para análise preditiva de dados.
+Vamos usa-lá em nosso classificador!
+Com base na análise da descrição dos dados, foram escolhido os seguintes classificadores:
+
+- Decision Tree 
+- Random Forest
+- Logistic Regression 
+- SVC
+- Naive Bayes
+- KNN
+- MLP
+
+#### Explicando os modelos
+TODO
+
+
+### 6. Análise dos Resultados
+
+O modelo de classificação que obteve melhor resultado foi RandomForestClassifier com uma precisão/acurácia de 68%.
+
+#### Métricas analisadas
+
+As métricas analisadas foram:
+- Acurácia acc_score ou Precisão
+
+    Proporção de observações classificadas corretamente
+
+- Recall 
+
+    Proporção de verdadeiros positivos corretamente identificados
+
+- F-score (F1)
+
+    Média harmônica entre a acurácia e o recall de um classificador
 
 ## Referencias:
 
