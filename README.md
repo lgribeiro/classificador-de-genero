@@ -31,6 +31,16 @@ Se optou pelo Anaconda execute o comando abaixo no terminal da aplicação:
 ```
 conda update --all
 ```
+### 3. Executando o classificador de gênero
+O modelo classificará a partir de um lote de dados de pacientes, arquivo .csv, se o genêro é masculino: M ou feminino: F. O resultado e exportado na raiz da pasta do projeto como 'newsample_PREDICTIONS_Luiz_Ribeiroo.csv'.
+Para executar o classificador use o seguinte comando 
+
+```
+python gender_predictor.py --input_file newsample.csv
+```
+### 4. Base de dados
+A base de dados, test_data_CANDIDATE.csv, que se encontra na raiz do projeto será usada para treinar o modelo de classificação de gênero. 
+Observação: A base de dados fornecida carece de fonte.
 
 ## Descrição da base de dados 
 
@@ -52,8 +62,24 @@ conda update --all
 - ca: number of major vessels (0-3) colored by flourosopy
 - thal: 3 = normal; 6 = fixed defect; 7 = reversable defect
 
+### 5. Modelos de classificação
+A Scikit-Learn é uma biblioteca  para trabalhar com machine learning em python. Essa poderosa ferramente construida em NumPy, SciPy e matplotlib é simple e eficiente para análise preditiva de dados.
+Vamos usa-lá em nosso classificador!
+Com base na análise da descrição dos dados, foram escolhido os seguintes classificadores:
+- Decision Tree 
+- Random Forest
+- Logistic Regression 
+- SVC
+- Naive Bayes
+- KNN
+- MLP
 
-
+#### Explicando os modelos
+TODO
+### 6. Análise dos Resultados
+TODO
+#### Métricas analisadas
+TODO
 
 ## Referencias:
 
