@@ -1,7 +1,7 @@
-
+from sklearn.compose import ColumnTransformer
+from sklearn.preprocessing import StandardScaler
 from sklearn.metrics import accuracy_score
 from sklearn.model_selection import train_test_split
-from sklearn.preprocessing import StandardScaler
 from os import listdir, rename, makedirs, remove
 from os.path import isfile, join, exists, isdir, abspath
 import pandas as pd
@@ -13,35 +13,43 @@ import os
 
 def Preprocessing_data(df):
     col = df.columns
-    # removendo a coluna index se existir.
-    if any("index" in s for s in col):        
+    if any("index" in s for s in col):
+        # removendo a coluna index
         df = df.drop("index", axis=1)
-        print("Removeu coluna: index")
-            
+        print("removeu coluna index")   
+
+        
     # identificando valores NaN
     if (df.isnull().any().any()) :
         df = df.dropna()
-        print("Removeu linhas com valores ausentes")
+        print("removeu linhas com valores ausentes")
 
-    # removendo linhas duplicadas    
+    # removendo linhas duplicadas
     if(df.duplicated().any().any()):
         df = df.drop_duplicates()
         print("removeu linhas duplicadas")
-    
-    col = df.columns 
-    # removendo a coluna sex se existir, vamos predizer essa coluna!   
-    if any("sex" in s for s in col):        
+        
+    col = df.columns    
+    if any("sex" in s for s in col):
+        # removendo a coluna sex
+        labels = df['sex'].str.upper()
         df = df.drop("sex", axis=1)
-        print("Removeu coluna: sex")
+        print("removeu coluna sex")
 
     # usando propriedades do desvio padrao para encontrar e remover colunas com o mesmo valor
     df = df.drop(df.std()[(df.std() == 0)].index, axis=1)
+    # decompondo variaveis categoricas 
+    cat_df = pd.get_dummies(df, columns=['fbs', 'restecg', 'exang', 'slope', 'nar', 'hc', 'sk'])
 
-    # transformando int em float para todo dataframe
-    numeric_columns = df.select_dtypes(['int64']).columns
-    df[numeric_columns] = df[numeric_columns].astype('float32')
 
-    return df
+    # padronizando variaveis continuas
+    cont_col = ['trestbps', 'chol', 'thalach', 'oldpeak', 'ca', 'thal', 'trf'] 
+    scaler = ColumnTransformer ([('scaler', StandardScaler(), cont_col)], remainder='passthrough')
+
+    scaler.fit(cat_df)
+    features = scaler.transform(cat_df)
+
+    return features
 
 def parse_arguments(argv):
     parser = argparse.ArgumentParser(description='Code for predict sex.')
@@ -55,14 +63,11 @@ def main(args):
     filename = abspath(args.input_file)
     print(filename)
     df = pd.read_csv(filename)
-    df = Preprocessing_data(df)
+    features = Preprocessing_data(df)
 
     pkl_filename = "pickle_model.pkl"
     with open(pkl_filename, 'rb') as file:
         model = pickle.load(file)
-        
-    features = df.values.tolist()
-    features = StandardScaler().fit_transform(features)
 
     out_predict = model.predict(features)
 
