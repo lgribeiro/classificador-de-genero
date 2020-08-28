@@ -11,6 +11,7 @@ Este projeto consiste em :
 Uma boa prática de programação é criar um ambiente isolado de desenvolvimento para o Python3 e suas dependências (Virtual Environments - env). Abaixo alguns tutoriais de como criar um ambiente virtual.
 
 https://virtualenvwrapper.readthedocs.io/en/latest/
+
 https://pythonacademy.com.br/blog/python-e-virtualenv-como-programar-em-ambientes-virtuais
 
 Como alternativa prática, o Framework Anaconda pode ser instalado. Por ser uma ferramente computacional gratuita e de fácil instalação que permite gerir distribuições de Python (e meu S.O é windows) eu preferi usa-la.
