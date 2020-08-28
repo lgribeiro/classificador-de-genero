@@ -42,7 +42,7 @@ python gender_predictor.py --input_file newsample.csv
 A base de dados, test_data_CANDIDATE.csv, que se encontra na raiz do projeto será usada para treinar o modelo de classificação de gênero. 
 Observação: A base de dados fornecida carece de fonte.
 
-## Descrição da base de dados 
+#### Descrição da base de dados 
 
 - age: in years
 - sex: (M = male; F = female)
@@ -85,7 +85,7 @@ TODO
 
 ### 6. Análise dos Resultados
 
-O modelo de classificação que obteve melhor resultado foi RandomForestClassifier com uma precisão/acurácia de .
+O modelo de classificação que obteve melhor resultado foi RandomForestClassifier com uma precisão/acurácia de 68%.
 
 #### Métricas analisadas
 
