@@ -1,13 +1,12 @@
 # classificador-de-genero
 
 ## Desafio Classificação de Gênero
+
 Este projeto consiste em :
-- Analisar dados de pacientes
-- Construir um modelo de predição de gênero {Masculino: M, Feminino:F}
+- Analisar dados de pacientes;
+- Construir um modelo de predição de gênero {Masculino: M, Feminino: F}.
 
-## Instalação do python3.6.x e atualizações de suas bibliotecas.
-
-### 1. Instalando python3.6.x no Unix ou Windows
+### 1. Instalando python3.x no Unix ou Windows
 Uma boa prática de programação é criar um ambiente isolado de desenvolvimento para o Python3 e suas dependências (Virtual Environments - env). Abaixo alguns tutoriais de como criar um ambiente virtual.
 
 https://virtualenvwrapper.readthedocs.io/en/latest/
@@ -21,25 +20,28 @@ https://docs.anaconda.com/anaconda/install/
 
 ### 2. Instalando e atualizando bibliotecas
 
-Se você criou seu prórpio ambiente (Virtual Environments - env) execute no terminal o comando  abaixo para atualizar as bibliotecas necessárias.
+Se você criou seu prórpio ambiente (Virtual Environments - env) execute no terminal o comando abaixo para atualizar as bibliotecas necessárias.
 
 ```
 pip install -r requirements.txt
 
 ```
-Se optou pelo Anaconda execute o comando abaixo no terminal da aplicação:
+Se optou pelo Anaconda execute o comando abaixo no terminal com o env(conda):
 
 ```
 conda update --all
 ```
 ### 3. Executando o classificador de gênero
-O modelo classificará a partir de um lote de dados de pacientes, arquivo .csv, se o genêro é masculino: M ou feminino: F. O resultado e exportado na raiz da pasta do projeto como 'newsample_PREDICTIONS_Luiz_Ribeiroo.csv'.
-Para executar o classificador use o seguinte comando 
+
+O modelo classificará a partir de um lote de dados de pacientes, arquivo .csv, se o genêro é masculino: M ou feminino: F. O resultado é exportado na raiz da pasta do projeto como 'newsample_PREDICTIONS_Luiz_Ribeiro.csv'.
+Para executar o classificador use o seguinte comando: 
 
 ```
 python gender_predictor.py --input_file newsample.csv
 ```
+
 ### 4. Base de dados
+
 A base de dados, test_data_CANDIDATE.csv, que se encontra na raiz do projeto será usada para treinar o modelo de classificação de gênero. 
 Observação: A base de dados fornecida carece de fonte.
 
@@ -68,8 +70,10 @@ Observação: A base de dados fornecida carece de fonte.
 <img src="/images/scikit-learn.png" alt="Scikit-Learn"/>
 
 
-A Scikit-Learn é uma biblioteca  para trabalhar com machine learning em python. Essa poderosa ferramente construida em NumPy, SciPy e matplotlib é simple e eficiente para análise preditiva de dados.
-Vamos usa-lá em nosso classificador!
+A Scikit-Learn é uma biblioteca  para trabalhar com machine learning em python. Essa poderosa ferramenta construída em NumPy, SciPy e matplotlib é simples e eficiente para análise preditiva de dados.
+
+Vamos usá-la em nosso classificador!
+
 Com base na análise da descrição dos dados, foram escolhido os seguintes classificadores:
 
 - Decision Tree 
@@ -81,16 +85,19 @@ Com base na análise da descrição dos dados, foram escolhido os seguintes clas
 - MLP
 
 #### Explicando os modelos
-TODO
 
+TO-DO: explicar os modelos e o porque da escolha
 
 ### 6. Análise dos Resultados
 
 O modelo de classificação que obteve melhor resultado foi RandomForestClassifier com uma precisão/acurácia de 68%.
 
+TO-DO:  colocar a tabela dos reultados
+
 #### Métricas analisadas
 
 As métricas analisadas foram:
+
 - Acurácia acc_score ou Precisão
 
     Proporção de observações classificadas corretamente
@@ -103,15 +110,11 @@ As métricas analisadas foram:
 
     Média harmônica entre a acurácia e o recall de um classificador
 
-## Referencias:
-
-https://scikit-learn.org/stable/auto_examples/classification/plot_classifier_comparison.html#sphx-glr-auto-examples-classification-plot-classifier-comparison-py
-
-https://scikit-learn.org/stable/modules/model_evaluation.html#confusion-matrix
-
-https://scikit-learn.org/stable/modules/cross_validation.html#cross-validation
+### Referencias:
 
 https://scikit-learn.org/stable/tutorial/basic/tutorial.html
+
+https://scikit-learn.org/stable/auto_examples/classification/plot_classifier_comparison.html#sphx-glr-auto-examples-classification-plot-classifier-comparison-py
 
 https://www.vooo.pro/insights/fundamentos-dos-algoritmos-de-machine-learning-com-codigo-python-e-r/
 
