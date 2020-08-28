@@ -11,6 +11,7 @@ Este projeto consiste em :
 Uma boa prática de programação é criar um ambiente isolado de desenvolvimento para o Python3 e suas dependências (Virtual Environments - env). Abaixo alguns tutoriais de como criar um ambiente virtual.
 
 https://virtualenvwrapper.readthedocs.io/en/latest/
+
 https://pythonacademy.com.br/blog/python-e-virtualenv-como-programar-em-ambientes-virtuais
 
 Como alternativa prática, o Framework Anaconda pode ser instalado. Por ser uma ferramente computacional gratuita e de fácil instalação que permite gerir distribuições de Python (e meu S.O é windows) eu preferi usa-la.
@@ -42,7 +43,7 @@ python gender_predictor.py --input_file newsample.csv
 A base de dados, test_data_CANDIDATE.csv, que se encontra na raiz do projeto será usada para treinar o modelo de classificação de gênero. 
 Observação: A base de dados fornecida carece de fonte.
 
-## Descrição da base de dados 
+#### Descrição da base de dados 
 
 - age: in years
 - sex: (M = male; F = female)
@@ -85,7 +86,7 @@ TODO
 
 ### 6. Análise dos Resultados
 
-O modelo de classificação que obteve melhor resultado foi RandomForestClassifier com uma precisão/acurácia de .
+O modelo de classificação que obteve melhor resultado foi RandomForestClassifier com uma precisão/acurácia de 68%.
 
 #### Métricas analisadas
 
