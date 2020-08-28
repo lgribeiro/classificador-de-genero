@@ -7,7 +7,6 @@ Este projeto consiste em :
 - Construir um modelo de predição de gênero {Masculino: M, Feminino: F}.
 
 ### 1. Instalando python3.x no Unix ou Windows
-
 Uma boa prática de programação é criar um ambiente isolado de desenvolvimento para o Python3 e suas dependências (Virtual Environments - env). Abaixo alguns tutoriais de como criar um ambiente virtual.
 
 https://virtualenvwrapper.readthedocs.io/en/latest/
