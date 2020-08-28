@@ -64,17 +64,13 @@ Observação: A base de dados fornecida carece de fonte.
 
 ### 5. Modelos de classificação
 
-
-
 <img src="/images/scikit-learn.png" alt="Scikit-Learn"/>
-
-
-![Scikit-Learn](https://github.com/lgribeiro/classificador-de-genero/blob/dev/scikit-learn.png)
 
 
 A Scikit-Learn é uma biblioteca  para trabalhar com machine learning em python. Essa poderosa ferramente construida em NumPy, SciPy e matplotlib é simple e eficiente para análise preditiva de dados.
 Vamos usa-lá em nosso classificador!
 Com base na análise da descrição dos dados, foram escolhido os seguintes classificadores:
+
 - Decision Tree 
 - Random Forest
 - Logistic Regression 
@@ -85,10 +81,26 @@ Com base na análise da descrição dos dados, foram escolhido os seguintes clas
 
 #### Explicando os modelos
 TODO
+
+
 ### 6. Análise dos Resultados
-TODO
+
+O modelo de classificação que obteve melhor resultado foi RandomForestClassifier com uma precisão/acurácia de .
+
 #### Métricas analisadas
-TODO
+
+As métricas analisadas foram:
+- Acurácia acc_score ou Precisão
+
+    Proporção de observações classificadas corretamente
+
+- Recall 
+
+    Proporção de verdadeiros positivos corretamente identificados
+
+- F-score (F1)
+
+    Média harmônica entre a acurácia e o recall de um classificador
 
 ## Referencias:
 
