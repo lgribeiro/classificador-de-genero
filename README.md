@@ -63,6 +63,15 @@ Observação: A base de dados fornecida carece de fonte.
 - thal: 3 = normal; 6 = fixed defect; 7 = reversable defect
 
 ### 5. Modelos de classificação
+
+
+
+<img src="/images/scikit-learn.png" alt="Scikit-Learn"/>
+
+
+![Scikit-Learn](https://github.com/lgribeiro/classificador-de-genero/blob/dev/scikit-learn.png)
+
+
 A Scikit-Learn é uma biblioteca  para trabalhar com machine learning em python. Essa poderosa ferramente construida em NumPy, SciPy e matplotlib é simple e eficiente para análise preditiva de dados.
 Vamos usa-lá em nosso classificador!
 Com base na análise da descrição dos dados, foram escolhido os seguintes classificadores:
